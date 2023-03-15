@@ -19,13 +19,13 @@ ADDITIONAL_SYSTEM_PROPERTIES  += \
 endif
 
 # Custom security patch
-CUSTOM_SECURITY_PATCH := 2022-08-05
+CUSTOM_SECURITY_PATCH := 1970-01-01
 
 # Versioning props
 ADDITIONAL_SYSTEM_PROPERTIES  += \
-    org.pixelexperience.version=$(CUSTOM_VERSION_PROP) \
-    org.pixelexperience.version.display=$(CUSTOM_VERSION) \
-    org.pixelexperience.build_date=$(CUSTOM_BUILD_DATE) \
-    org.pixelexperience.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
-    org.pixelexperience.build_type=$(CUSTOM_BUILD_TYPE) \
-    org.pixelexperience.build_security_patch=$(CUSTOM_SECURITY_PATCH)
+    cn.arsenals.os.version=$(CUSTOM_VERSION_PROP) \
+    cn.arsenals.os.version.display=$(CUSTOM_VERSION) \
+    cn.arsenals.os.build_date=$(CUSTOM_BUILD_DATE) \
+    cn.arsenals.os.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
+    cn.arsenals.os.build_type=$(CUSTOM_BUILD_TYPE) \
+    cn.arsenals.os.build_security_patch=$(CUSTOM_SECURITY_PATCH)

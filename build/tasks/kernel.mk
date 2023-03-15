@@ -1,6 +1,7 @@
 # Copyright (C) 2012 The CyanogenMod Project
 #           (C) 2017-2022 The LineageOS Project
 #           (C) 2018-2022 The PixelExperience Project
+# Copyright (C) 2023 Arsenals Os
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

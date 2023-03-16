@@ -42,11 +42,11 @@ except ImportError:
 
 DEBUG = False
 
-custom_local_manifest = ".repo/local_manifests/pixel.xml"
-custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'thirteen')
+custom_local_manifest = ".repo/local_manifests/arsenals.xml"
+custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'aos')
 custom_dependencies = "aosp.dependencies"
-org_manifest = "pixel-devices"  # leave empty if org is provided in manifest
-org_display = "PixelExperience-Devices"  # needed for displaying
+org_manifest = "arsenalsos"  # leave empty if org is provided in manifest
+org_display = "Y-D-Lu"  # needed for displaying
 
 github_auth = None
 
@@ -275,9 +275,11 @@ def main():
     repositories = []
 
     try:
+        print("search GitHub githubreq : " + githubreq.get_full_url())
         result = json.loads(urllib.request.urlopen(githubreq).read().decode())
-    except urllib.error.URLError:
+    except urllib.error.URLError as e:
         print("Failed to search GitHub")
+        print(e.reason)
         sys.exit(1)
     except ValueError:
         print("Failed to parse return data from GitHub")
@@ -288,13 +290,13 @@ def main():
     for repository in repositories:
         repo_name = repository['name']
 
-        if not (repo_name.startswith("device_") and
+        if not (repo_name.startswith("ArsenalsOs_device_") and
                 repo_name.endswith("_" + device)):
             continue
         print("Found repository: %s" % repository['name'])
 
         fallback_branch = detect_revision(repository)
-        manufacturer = repo_name[7:-(len(device)+1)]
+        manufacturer = repo_name[18:-(len(device)+1)]
         repo_path = "device/%s/%s" % (manufacturer, device)
         adding = [{'repository': repo_name, 'target_path': repo_path}]
 
